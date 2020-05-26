@@ -1,0 +1,60 @@
+<!Doctype html>
+<html>
+    <head>
+        
+            
+       <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+    </head>
+    
+    
+    <body>
+        
+        <div class="container"></div>
+        <div class="container"></div>
+        <div class="container"></div>
+        
+        
+        <script>
+            
+           
+            
+            
+            
+            
+            
+            
+            $(function(){
+                
+                var container = $(".container");
+                var x = 20;
+                  
+                                
+                for(var i = 0; i < container.length; i++){
+                  var newX = x + x;
+                    container.eq(i).css({width: newX, height: 40, background: "red"});
+                    
+                    console.log(container);
+                }
+                
+               
+                
+            });
+            
+            
+        
+        
+        
+        </script>
+        
+        
+        
+        
+        
+        
+     
+    </body>
+
+</html>

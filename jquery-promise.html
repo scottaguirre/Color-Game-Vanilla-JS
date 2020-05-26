@@ -1,0 +1,70 @@
+<html>
+    <head>
+    
+        <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+        <button>Click me</button>
+        
+        
+        
+        <script>
+            $(document).ready(function(){
+                
+              $('button').on("click", function(){
+                  
+                  var df = $.Deferred();
+                  
+                  var stop = setTimeout(function(){
+                      df.resolve("resolved 1");
+                  }, 2000);
+                  
+                  df.then(function(result){
+                      
+                    var df2 = $.Deferred();
+                    
+                    setTimeout(function(){
+                        
+                      df2.resolve(result + result);
+                    }, 3000);
+                      
+                    return df2; 
+                     
+                  }).then(function(value){
+                      
+                      var df3 = $.Deferred();
+                      
+                      setTimeout(function(){
+                          df3.resolve(value + "other promise");
+                      }, 2000);
+                      
+                      return df3;
+                      
+                  }).done(function(value){
+                      console.log(value);
+                  });
+                    
+              }); // button click
+                
+                
+                
+                
+                
+                
+                
+                
+            }); // document.ready
+        
+        
+        
+        
+        </script>
+    
+        
+    
+    </body>
+</html>

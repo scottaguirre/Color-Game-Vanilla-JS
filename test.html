@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+	<title> JavaScript</title>
+		<meta charset="utf-8" />
+ 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+ 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+ 		<style type="text/css">
+
+ 			#circle {
+ 				width: 200px;
+ 				height: 200px;
+ 				border-radius: 50%;
+ 				background-color: red;
+ 			}
+
+ 			.smallcircle {
+ 				width: 100px;
+ 				height: 100px;
+ 				border-radius: 50%;
+ 				background-color: blue;
+ 			}
+
+
+ 		</style>
+
+	</head>
+	
+
+	<body>
+
+	<div id="circle"></div>
+	<div id="another" class="blue"></div>
+	<hr border-bottom: 20px;>
+
+	<input type="text" id="newText" value="">
+	<button id="textCreator">Enter something</button>
+	<div id="emptyDiv"></div>
+	<div id="someText">This is very, very...</div>
+		
+	<hr>
+
+
+		<input type="text" id="test" value="enter something">
+		<button id="changer">Click here to change</button>
+		<div id="original">This is the text</div>
+
+
+
+		<script type="text/javascript">
+
+
+			document.getElementById("circle").onclick=function(){
+
+				document.getElementById("another").className += ' smallcircle';
+			}
+			
+
+			document.getElementById("changer").onclick=function(){
+				document.getElementById("original").innerHTML = document.getElementById("test").value;
+
+
+			}
+
+			document.getElementById('textCreator').onclick=function(){
+				document.getElementById('someText').innerHTML = document.getElementById('someText').innerHTML + document.getElementById('newText').value;
+			}
+
+
+
+		</script>
+
+<script type="text/javascript">
+
+	//ask user for elements or press 1 to quit
+
+	var elements = prompt('Please enter the elements of the array'); 
+	var arrayElements = [];
+	// Repeat process until user presses 1
+	while(elements !== "1"){	
+	
+	//store them in an array	
+	arrayElements.push(elements);
+	elements = prompt('please enter the elements of the array or press1 to quit');
+	}
+
+	console.log('you have quit the app');
+
+// loop them in reverse order
+// print them out to console
+	// for(var i = arrayElements.length - 1; i >= 0; i--){
+	// 	console.log(arrayElements[i]);
+		
+	// }
+
+	
+		newArray = [];
+		arrayElements.forEach(function(item, i){	
+				console.log(i + ": " + item);	
+				newArray.unshift(item);
+		});
+
+		newArray.forEach(function(item, i){	
+				console.log(i + ": " + item);
+		});
+
+			
+		
+	function max(numbers){
+		max= numbers[0];
+
+		numbers.forEach(function(eachNumber){
+
+			if(max < eachNumber){
+				max = eachNumber;
+			}
+		});
+
+		return max;
+
+	}
+
+	function factorial(num){
+		result = 1;
+		for(var i=1; i<=num; i++){
+			result = result*i;
+		}
+		return result;
+	}
+
+
+function myforeach(arr, func){
+
+	for( var i = 0; i <= arr.length; i++){
+	 func(arr[i]);
+	}
+}
+
+var comida = ["frijoles", "arroz", "pan", "cebada"];
+
+	
+myforeach(comida, alert);
+
+
+var someObject = {
+	friends: [
+		{name: "Malfoy"},
+		{name: "Crabbe"},
+		{name: "Goyle"},
+	],
+
+	color: "baby blue",
+	isEvil: true
+};
+
+
+var movies = [
+
+{
+	title: "frozen",
+	rating: 4.5,
+	watch: true
+},
+{
+	title: "sonadora",
+	rating: 2.5,
+	watch: false
+},
+{
+	title: "spare parts",
+	rating: 5,
+	watch: true
+}
+
+];
+
+
+function movie(x){
+	var result = "you have ";
+	if(x.watch){
+		result += "watched ";
+	} else {
+		result += "not watched ";
+	}
+
+	result += x.title + " - " + x.rating + " stars";
+	return  result;
+}
+
+movies.forEach(function(x){
+	console.log(movie(x));
+});
+
+
+
+</script>
+
+
+
+
+	</body>
+
+</html>
